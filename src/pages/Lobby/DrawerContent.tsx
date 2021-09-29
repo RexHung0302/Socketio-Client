@@ -100,7 +100,7 @@ const DrawerContent: React.FC<Props> = ({
                   name: data.state.name,
                 });
               }
-              // history.push("/");
+              history.push("/");
             }}
           />
         </ListItem>
