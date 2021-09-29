@@ -383,7 +383,9 @@ const Lobby: React.FC = () => {
                   onClick={() => joinChatRoomHandler(chatRoom)}
                 >
                   <div className="chatRoom__content">
-                    <h3>{chatRoom.name}</h3>
+                    <h3>
+                      {chatRoom.name}({chatRoom.userNumber})
+                    </h3>
                     <p className="desc">{chatRoom.desc}</p>
                   </div>
                 </div>

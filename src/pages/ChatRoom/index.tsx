@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 
 import styled from "styled-components";
 
-import { StateContext } from "../index";
+import { chatRoomInfoType, StateContext } from "../index";
 
 // Components
 import ArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
@@ -246,6 +246,17 @@ const ChatRoom: React.FC = () => {
           },
         ]);
       });
+
+      // 人數監聽
+      data.state.ws.on("updateRoomInfo", (dataInfo: chatRoomInfoType) => {
+        data.setState(
+          (preVal) =>
+            (preVal = {
+              ...preVal,
+              selectChatRoom: dataInfo,
+            })
+        );
+      });
     }
   };
 
@@ -322,6 +333,11 @@ const ChatRoom: React.FC = () => {
           {data?.state.selectChatRoom
             ? data?.state.selectChatRoom.name
             : "unKnow Room Name"}
+          (
+          {data?.state.selectChatRoom?.userNumber
+            ? data.state.selectChatRoom?.userNumber
+            : "unKnow"}
+          )
         </span>
         <div className="header__icon">
           <CallIcon className="cursor-pointer" />

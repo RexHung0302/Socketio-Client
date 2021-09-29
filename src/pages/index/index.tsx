@@ -19,6 +19,7 @@ export type chatRoomInfoType = {
   id: string;
   name: string;
   desc: string;
+  userNumber: number;
 };
 
 export const StateContext = createContext<{
