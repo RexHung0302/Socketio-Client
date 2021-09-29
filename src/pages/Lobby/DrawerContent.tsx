@@ -78,31 +78,18 @@ const DrawerContent: React.FC<Props> = ({
           button
           key={3}
           onClick={() => {
-            data?.setState(
-              (preVal) =>
-                (preVal = {
-                  ...preVal,
-                  ws: undefined,
-                  isLogout: true,
-                })
-            );
+            if (data?.state.ws) {
+              data.state.ws.emit("disconnectLobby", {
+                id: data.state.id,
+              });
+            }
+            history.push("/");
           }}
         >
           <ListItemIcon>
             <ExitToAppIcon />
           </ListItemIcon>
-          <ListItemText
-            primary="離開聊天室"
-            onClick={() => {
-              if (data?.state.ws && data.state.selectChatRoom) {
-                data.state.ws.emit("disconnectLobby", {
-                  id: data.state.id,
-                  name: data.state.name,
-                });
-              }
-              history.push("/");
-            }}
-          />
+          <ListItemText primary="離開聊天室" />
         </ListItem>
       </List>
     </Box>

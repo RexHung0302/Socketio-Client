@@ -153,31 +153,39 @@ const Lobby: React.FC = () => {
         //設定監聽
         initWebSocket();
       }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [data?.state.ws]
+  );
 
-      return () => {
-        if (data?.state.ws && data?.state.isLogout) {
-          setLoading((preVal: any) => (preVal = true));
+  // WS Function
 
-          data.state.ws.emit("logout", {
+  const initWebSocket = useCallback(
+    () => {
+      data?.setState(
+        (preVal) =>
+          (preVal = {
+            ...preVal,
+          })
+      );
+
+      if (data?.state.ws) {
+        if (!data.state.selectChatRoom) {
+          // 傳送 login 到 Socket.io
+          data.state.ws.emit("login", {
             id: data?.state.id,
             name: data?.state.name,
           });
+        }
 
-          data?.setState(
-            (preVal) =>
-              (preVal = {
-                ...preVal,
-                name: null,
-                id: undefined,
-              })
-          );
-
+        // 連線成功
+        data.state.ws.once("connectionSuccess", (data) => {
           setSnackbar(
             (preVal) =>
               (preVal = {
                 open: true,
-                severity: "info",
-                message: "登出成功",
+                severity: "success",
+                message: data.message,
               })
           );
 
@@ -191,111 +199,63 @@ const Lobby: React.FC = () => {
             );
           }, 2000);
 
+          setLoading((preVal: any) => (preVal = false));
+        });
+
+        // 連線失敗
+        data.state.ws.once("connectionFail", (data) => {
+          setSnackbar(
+            (preVal) =>
+              (preVal = {
+                open: true,
+                severity: "error",
+                message: data.message,
+              })
+          );
           setTimeout(() => {
-            setLoading((preVal: any) => (preVal = false));
             history.push("/");
           }, 1000);
-        }
-      };
+        });
+
+        // 更新線上人數
+        data.state.ws.on("updateInfo", (data) => {
+          setUserNumber(data.userNumber);
+          setChatRooms(data.chatRooms);
+        });
+
+        // 接收個人訊息
+        data.state.ws.on("personalAnnouncement", (dataInfo) => {
+          const { data } = dataInfo;
+
+          setSnackbar(
+            (preVal) =>
+              (preVal = {
+                open: true,
+                severity:
+                  data.text === "新增成功"
+                    ? "success"
+                    : data.text === "新增失敗"
+                    ? "error"
+                    : "info",
+                message: data.text,
+              })
+          );
+
+          setTimeout(() => {
+            setSnackbar(
+              (preVal) =>
+                (preVal = {
+                  ...preVal,
+                  open: false,
+                })
+            );
+          }, 2000);
+        });
+      }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [data?.state.ws]
   );
-
-  // WS Function
-
-  const initWebSocket = useCallback(() => {
-    data?.setState(
-      (preVal) =>
-        (preVal = {
-          ...preVal,
-        })
-    );
-
-    if (data?.state.ws) {
-      if (!data.state.selectChatRoom) {
-        // 傳送 login 到 Socket.io
-        data.state.ws.emit("login", {
-          id: data?.state.id,
-          name: data?.state.name,
-        });
-      }
-
-      // 連線成功
-      data.state.ws.once("connectionSuccess", (data) => {
-        setSnackbar(
-          (preVal) =>
-            (preVal = {
-              open: true,
-              severity: "success",
-              message: data.message,
-            })
-        );
-
-        setTimeout(() => {
-          setSnackbar(
-            (preVal) =>
-              (preVal = {
-                ...preVal,
-                open: false,
-              })
-          );
-        }, 2000);
-
-        setLoading((preVal: any) => (preVal = false));
-      });
-
-      // 連線失敗
-      data.state.ws.once("connectionFail", (data) => {
-        setSnackbar(
-          (preVal) =>
-            (preVal = {
-              open: true,
-              severity: "error",
-              message: data.message,
-            })
-        );
-        setTimeout(() => {
-          history.push("/");
-        }, 1000);
-      });
-
-      // 更新線上人數
-      data.state.ws.on("updateInfo", (data) => {
-        setUserNumber(data.userNumber);
-        setChatRooms(data.chatRooms);
-      });
-
-      // 接收個人訊息
-      data.state.ws.on("personalAnnouncement", (dataInfo) => {
-        const { data } = dataInfo;
-
-        setSnackbar(
-          (preVal) =>
-            (preVal = {
-              open: true,
-              severity:
-                data.text === "新增成功"
-                  ? "success"
-                  : data.text === "新增失敗"
-                  ? "error"
-                  : "info",
-              message: data.text,
-            })
-        );
-
-        setTimeout(() => {
-          setSnackbar(
-            (preVal) =>
-              (preVal = {
-                ...preVal,
-                open: false,
-              })
-          );
-        }, 2000);
-      });
-    }
-  }, [data?.state.ws]);
 
   // 加入聊天室
   const joinChatRoomHandler = (chatRoom: chatRoomInfoType) => {

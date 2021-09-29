@@ -2,7 +2,7 @@
 
 ![Socket.io Chat Room Demo](/demo.gif)
 
-這是一個使用 **Create React App** 搭配 **[Material-ui](https://material-ui.com/)** 建立的前端專案，專門用來提供前端專案聊天室的功能，使用 [Socket.io](https://socket.io/) 與後端專案搭配製作出聊天室；後端專案可參考此處 [Socketio-Server](https://github.com/RexHung0302/Socketio-Server)。
+這是一個使用 **Create React App** 搭配 **[Material-ui](https://material-ui.com/)** 建立的前端專案，專門用來提供前端專案聊天室的功能，使用 [Socket.io](https://socket.io/) 與後端專案搭配製作出聊天室。
 
 基本功能為：
 
@@ -10,7 +10,7 @@
 
 2. 聊天室/頻道 分群聊天 - [Socket.io Rooms](https://socket.io/docs/v4/rooms/#default-room)
 
-3. 可接受公告全體推播，可透過前端打 **API**，詳細可參考後端專案。
+3. 可接受公告全體推播，可透過前端打 **API**。
 
 ---
 
@@ -33,8 +33,6 @@
 ## 備註
 
 1. 這個專案僅提供實驗性質，請勿使用在盈利或者工作上，因作者不保證功能無瑕疵或者有任何 **Bug**，請自行承擔風險。
-
-2. 後端專案可參考[連結](https://github.com/RexHung0302/Socketio-Server)
 
 ---
 

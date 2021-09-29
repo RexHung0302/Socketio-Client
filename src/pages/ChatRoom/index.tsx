@@ -191,26 +191,30 @@ const ChatRoom: React.FC = () => {
   const loading = useState(false)[0];
 
   // 初始化
-  useEffect(() => {
-    if (!data?.state.id || !data?.state.name || !data?.state.selectChatRoom) {
-      history.push("/lobby");
-    }
+  useEffect(
+    () => {
+      if (!data?.state.id || !data?.state.name || !data?.state.selectChatRoom) {
+        history.push("/lobby");
+      }
 
-    if (data?.state.ws && data?.state.selectChatRoom) {
-      data.state.ws.emit("joinChatRoom", {
-        id: data.state.id,
-        name: data.state.name,
-        roomId: data.state.selectChatRoom.id,
-      });
+      if (data?.state.ws && data?.state.selectChatRoom) {
+        data.state.ws.emit("joinChatRoom", {
+          id: data.state.id,
+          name: data.state.name,
+          roomId: data.state.selectChatRoom.id,
+        });
 
-      // 初始化事件
-      initWebSocket();
-    }
+        // 初始化事件
+        initWebSocket();
+      }
 
-    return () => {
-      disconnectChatRoomHandler();
-    };
-  }, []);
+      return () => {
+        disconnectChatRoomHandler();
+      };
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   // 初始化
   const initWebSocket = () => {

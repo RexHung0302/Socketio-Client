@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-import { BrowserRouter as Router, Redirect, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { Socket } from "socket.io-client";
 import routers from "../../routers/index";
 import RouteWithSubRoutes from "../../routers/RouteWithSubRoutes";
@@ -44,7 +44,6 @@ const Index: React.FC = () => {
           {routers.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
           ))}
-          <Redirect to="/"></Redirect>
         </Switch>
       </Router>
     </StateContext.Provider>
