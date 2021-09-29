@@ -26,6 +26,8 @@
 4. npm start // 或是 docker build & run
 ```
 
+**如果在本地跑，請把 `src/pages/index/index.tsx` 的 basename="/Socketio-Client" 拿掉，不然會倒到錯誤的頁面，這是為了讓專案能在 Github 上順利跑才加的**
+
 ---
 
 ## 備註
