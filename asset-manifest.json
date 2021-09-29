@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Socketio-Client/static/css/main.7b905764.chunk.css",
-    "main.js": "/Socketio-Client/static/js/main.318e02c3.chunk.js",
-    "main.js.map": "/Socketio-Client/static/js/main.318e02c3.chunk.js.map",
+    "main.js": "/Socketio-Client/static/js/main.cf49beb2.chunk.js",
+    "main.js.map": "/Socketio-Client/static/js/main.cf49beb2.chunk.js.map",
     "runtime-main.js": "/Socketio-Client/static/js/runtime-main.07f3bd4a.js",
     "runtime-main.js.map": "/Socketio-Client/static/js/runtime-main.07f3bd4a.js.map",
     "static/js/2.a2255a33.chunk.js": "/Socketio-Client/static/js/2.a2255a33.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.07f3bd4a.js",
     "static/js/2.a2255a33.chunk.js",
     "static/css/main.7b905764.chunk.css",
-    "static/js/main.318e02c3.chunk.js"
+    "static/js/main.cf49beb2.chunk.js"
   ]
 }
