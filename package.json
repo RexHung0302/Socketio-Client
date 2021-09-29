@@ -2,7 +2,7 @@
   "name": "chat-room-v2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rexhung0302.github.io/socketio-client",
+  "homepage": "https://rexhung0302.github.io/Socketio-Client",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
