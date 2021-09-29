@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/socketio-client/static/css/main.7b905764.chunk.css",
-    "main.js": "/socketio-client/static/js/main.318e02c3.chunk.js",
-    "main.js.map": "/socketio-client/static/js/main.318e02c3.chunk.js.map",
-    "runtime-main.js": "/socketio-client/static/js/runtime-main.a84ca521.js",
-    "runtime-main.js.map": "/socketio-client/static/js/runtime-main.a84ca521.js.map",
-    "static/js/2.860bff5d.chunk.js": "/socketio-client/static/js/2.860bff5d.chunk.js",
-    "static/js/2.860bff5d.chunk.js.map": "/socketio-client/static/js/2.860bff5d.chunk.js.map",
-    "static/js/3.f39c2c3c.chunk.js": "/socketio-client/static/js/3.f39c2c3c.chunk.js",
-    "static/js/3.f39c2c3c.chunk.js.map": "/socketio-client/static/js/3.f39c2c3c.chunk.js.map",
-    "index.html": "/socketio-client/index.html",
-    "static/css/main.7b905764.chunk.css.map": "/socketio-client/static/css/main.7b905764.chunk.css.map",
-    "static/js/2.860bff5d.chunk.js.LICENSE.txt": "/socketio-client/static/js/2.860bff5d.chunk.js.LICENSE.txt",
-    "static/media/bg.658d320a.png": "/socketio-client/static/media/bg.658d320a.png",
-    "static/media/defaultUser.b55ae646.png": "/socketio-client/static/media/defaultUser.b55ae646.png",
-    "static/media/logo.6ce24c58.svg": "/socketio-client/static/media/logo.6ce24c58.svg"
+    "main.css": "/Socketio-Client/static/css/main.7b905764.chunk.css",
+    "main.js": "/Socketio-Client/static/js/main.318e02c3.chunk.js",
+    "main.js.map": "/Socketio-Client/static/js/main.318e02c3.chunk.js.map",
+    "runtime-main.js": "/Socketio-Client/static/js/runtime-main.07f3bd4a.js",
+    "runtime-main.js.map": "/Socketio-Client/static/js/runtime-main.07f3bd4a.js.map",
+    "static/js/2.a2255a33.chunk.js": "/Socketio-Client/static/js/2.a2255a33.chunk.js",
+    "static/js/2.a2255a33.chunk.js.map": "/Socketio-Client/static/js/2.a2255a33.chunk.js.map",
+    "static/js/3.f39c2c3c.chunk.js": "/Socketio-Client/static/js/3.f39c2c3c.chunk.js",
+    "static/js/3.f39c2c3c.chunk.js.map": "/Socketio-Client/static/js/3.f39c2c3c.chunk.js.map",
+    "index.html": "/Socketio-Client/index.html",
+    "static/css/main.7b905764.chunk.css.map": "/Socketio-Client/static/css/main.7b905764.chunk.css.map",
+    "static/js/2.a2255a33.chunk.js.LICENSE.txt": "/Socketio-Client/static/js/2.a2255a33.chunk.js.LICENSE.txt",
+    "static/media/bg.658d320a.png": "/Socketio-Client/static/media/bg.658d320a.png",
+    "static/media/defaultUser.b55ae646.png": "/Socketio-Client/static/media/defaultUser.b55ae646.png",
+    "static/media/logo.6ce24c58.svg": "/Socketio-Client/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a84ca521.js",
-    "static/js/2.860bff5d.chunk.js",
+    "static/js/runtime-main.07f3bd4a.js",
+    "static/js/2.a2255a33.chunk.js",
     "static/css/main.7b905764.chunk.css",
     "static/js/main.318e02c3.chunk.js"
   ]
