@@ -12,6 +12,8 @@
 
 3. 可接受公告全體推播，可透過前端打 **API**，詳細可參考後端專案。
 
+> **介紹文章可參考 [[NodeJS Become A Full Stack Developer] — 透過 Socket.io 來製作即時聊天室吧](https://rexhung0302.github.io/2021/10/01/20211001/#more)**
+
 ---
 
 ## 使用方法
